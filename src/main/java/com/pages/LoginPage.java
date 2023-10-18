@@ -23,6 +23,8 @@ public class LoginPage extends BasePage {
 	@FindBy(xpath = "//div[@class='orangehrm-login-branding']")
 	public WebElement orangeHrmLogo;
 	
+	
+	
 	//Initializing page objects:
 	public LoginPage() {
 		PageFactory.initElements(driver, this);
@@ -35,5 +37,9 @@ public class LoginPage extends BasePage {
 	
 	public void clickOnLoginButton() {
 		loginButton.click();
+	}
+	
+	public void selectUserRole(String userRole) {
+		
 	}
 }

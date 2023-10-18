@@ -4,8 +4,11 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver.Timeouts;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -58,5 +61,17 @@ public class BasePage {
 	public void waitForElementToClick(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	
+	public void waitForPageToLoad() {
+		Timeouts time = driver.manage().timeouts();
+		time.pageLoadTimeout(Duration.ofSeconds(10));
+	}
+	
+	public void scrollIntoViewByLocator(WebElement element) {
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView()", element);
+		
 	}
 }

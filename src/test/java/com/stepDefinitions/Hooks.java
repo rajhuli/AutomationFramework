@@ -23,11 +23,11 @@ public class Hooks extends BasePage {
 			TakesScreenshot scrnsht = (TakesScreenshot) driver;
 			byte[] screenshot = scrnsht.getScreenshotAs(OutputType.BYTES);
 			sc.attach(screenshot, "img/png", "screen shots for Failed Scenarios");
-		} else {
-			TakesScreenshot scrnsht = (TakesScreenshot) driver;
-			byte[] screenshot = scrnsht.getScreenshotAs(OutputType.BYTES);
-			sc.attach(screenshot, "img/png", "screen shots for Pass Scenarios");
-		}
+		} /*
+			 * else { TakesScreenshot scrnsht = (TakesScreenshot) driver; byte[] screenshot
+			 * = scrnsht.getScreenshotAs(OutputType.BYTES); sc.attach(screenshot, "img/png",
+			 * "screen shots for Pass Scenarios"); }
+			 */
 	}
 	
 	@After(order=0)
