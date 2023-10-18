@@ -31,6 +31,7 @@ public class LoginPage extends BasePage {
 	public void enterUsernameAndPassword(String username, String password) {
 		usernameField.sendKeys(username);
 		passwordField.sendKeys(password);
+		System.out.println("Hello");
 	}
 	
 	public void clickOnLoginButton() {
